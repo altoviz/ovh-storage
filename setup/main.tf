@@ -1,8 +1,8 @@
 provider "ovh" {
-  endpoint           = "ovh-eu"
-  application_key    = ""
-  application_secret = ""
-  consumer_key       = ""
+  # endpoint           = "ovh-eu"
+  # application_key    = ""
+  # application_secret = ""
+  # consumer_key       = ""
 }
 provider "openstack" {
   auth_url         = ovh_cloud_project_user.admin.openstack_rc["OS_AUTH_URL"]
