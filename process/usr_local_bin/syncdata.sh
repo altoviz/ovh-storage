@@ -1,4 +1,5 @@
 #!/bin/sh
 
-echo "Copying data"
+echo "Synchronizing data"
+ls -la /data/
 rclone -v sync /data/ ovh:$OVH_S3_BUCKET

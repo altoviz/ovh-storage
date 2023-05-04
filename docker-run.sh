@@ -17,6 +17,6 @@ docker run -itd \
   -e OVH_S3_SECRET_ACCESS_KEY=$OVH_S3_SECRET_ACCESS_KEY \
   -e OVH_S3_BUCKET=$OVH_S3_BUCKET \
   -e OVH_S3_REGION=$OVH_S3_REGION \
-  -v $(dirname "$(pwd)")/data:/data \
+  -v $(pwd)/data:/data \
   --name $container_name \
   $container_name

@@ -4,14 +4,16 @@ OVH Storage bootstrap
 
 **_ THIS IS A WORK IN PROGRESS PROJECT _**
 
-This bootstrap project allows you to copy your data to an OVH storage account as an easy and affordable backup solution from any cloud provider like AWS, Azure, GCP, OVH or even from an on premise infrastructure.
+This bootstrap project allows you to copy your data to an OVH storage account as an easy and affordable backup solution from any cloud provider ☁️ like AWS, Azure, GCP, OVH or even from an on premise infrastructure 🏢.
 
 # Features
 
-- Create your OVH infrastructure using [Terraform](https://terraform.io)
+- Create your OVH infrastructure using [Terraform](https://terraform.io) including :
 
-  - Cloud project
-  - Object storage
+  - A cloud project
+  - A user and password for your cloud project
+  - An object storage for your data
+  - An object storage for the logs
 
 - Supports
 
@@ -22,9 +24,10 @@ This bootstrap project allows you to copy your data to an OVH storage account as
   - Locks : Avoid any file modification
   - Retention : How long should keep files ?
 
-- Copy your files to OVH using [Rclone](https://rclone.org)
-- Docker container support
-- Fully reusable
+- Copy your files to OVH using [Rclone](https://rclone.org) 🐏🐏
+- Docker container support 📦
+- Fully reusable ⚒️
+- Super easy to run 😎
 
 ## Requirements
 
