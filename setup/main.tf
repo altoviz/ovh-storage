@@ -1,8 +1,8 @@
 provider "ovh" {
-  # endpoint           = "ovh-eu"
-  # application_key    = ""
-  # application_secret = ""
-  # consumer_key       = ""
+  endpoint           = "ovh-eu"
+  application_key    = ""
+  application_secret = ""
+  consumer_key       = ""
 }
 provider "openstack" {
   auth_url         = ovh_cloud_project_user.admin.openstack_rc["OS_AUTH_URL"]
@@ -37,7 +37,7 @@ terraform {
   required_providers {
     ovh = {
       source  = "ovh/ovh"
-      version = "=0.29.0"
+      version = "=0.30.0"
     }
     openstack = {
       source  = "terraform-provider-openstack/openstack"
@@ -45,7 +45,7 @@ terraform {
     }
     aws = {
       source  = "hashicorp/aws"
-      version = "=4.63.0"
+      version = "=4.65.0"
     }
     random = {
       source  = "hashicorp/random"

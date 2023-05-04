@@ -1,4 +1,4 @@
-credentials.*
+*-private.*
 # Local .terraform directories
 **/.terraform/*
 

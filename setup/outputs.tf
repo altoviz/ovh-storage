@@ -16,6 +16,14 @@ output "s3_secret_access_key" {
   sensitive = true
 }
 
+output "s3_bucket" {
+  value = aws_s3_bucket.bucket.bucket
+}
+
+output "s3_region" {
+  value = var.region
+}
+
 # output "admin_openstack_auth_url" {
 #   value = ovh_cloud_project_user.admin.openstack_rc["OS_AUTH_URL"]
 # }
