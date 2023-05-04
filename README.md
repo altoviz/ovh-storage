@@ -6,6 +6,30 @@ OVH Storage bootstrap
 
 This bootstrap project allows you to copy your data to an OVH storage account as an easy and affordable backup solution from any cloud provider like AWS, Azure, GCP, OVH or even from an on premise infrastructure.
 
+# Features
+
+- Create your OVH infrastructure using [Terraform](https://terraform.io)
+
+  - Cloud project
+  - Object storage
+
+- Supports
+
+  - Storage location : Where your data will be located ?
+  - Storage class : What kind of storage is appropriate ? Fast, standard, archive
+  - Logging : Track every file operations
+  - Versioning : Keep version of each file ?
+  - Locks : Avoid any file modification
+  - Retention : How long should keep files ?
+
+- Copy your files to OVH using [Rclone](https://rclone.org)
+- Docker container support
+- Fully reusable
+
+## Requirements
+
+You will need to get [OVHcloud API credentials](https://help.ovhcloud.com/csm/en-api-getting-started-ovhcloud-api?id=kb_article_view&sysparm_article=KB0042777).
+
 # Initial setup
 
 1. Clone the repo using
@@ -17,40 +41,13 @@ This bootstrap project allows you to copy your data to an OVH storage account as
 2. Make script files executable
 
    ```
+     cd ovh-storage
      chmod -R +x \*.sh
    ```
 
-3. Create a file called "credentials-private.sh" next to "credentials.sh with the following and replace the placeholders
-
-   ```
-   #!/bin/sh
-   export OVH_APPLICATION_KEY_PRIVATE=<Your Application Private Key>
-   export OVH_APPLICATION_SECRET_PRIVATE=<Your Application Secret>
-   export OVH_CONSUMER_KEY_PRIVATE=<Your Consummer Key>
-   ```
-
-# Features
-
-- Create your OVH infrastructure using [Terraform](https://terraform.io)
-- Supports
-
-  - Storage location
-  - Storage class
-  - Logging
-  - Versioning
-  - Locks
-  - Retention
-
-- Copy your files to OVH using [Rclone](https://rclone.org)
-- Docker container support
-
-## Requirements
-
-You will need to get [OVHcloud API credentials](https://help.ovhcloud.com/csm/en-api-getting-started-ovhcloud-api?id=kb_article_view&sysparm_article=KB0042777).
-
 # Rclone
 
-Using Rclone with OVH https://rclone.org/swift/
+[Using Rclone with OVH](https://help.ovhcloud.com/csm/en-public-cloud-storage-s3-rclone?id=kb_article_view&sysparm_article=KB0047458)
 
 # Docker
 

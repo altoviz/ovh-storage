@@ -2,17 +2,18 @@
 
 echo OVH credentials initialization
 
-crendentials_private="./credentials-private.sh"
+crendentials_private="./credentials-private2.sh"
 if [ -f $crendentials_private ]; then
   echo OVH reading private credentials
   . $crendentials_private 
 else
   echo $crendentials_private file is missing. Creating the file. Check readme.md for more information
   echo "#!/bin/sh" >> $crendentials_private
-  echo "export OVH_APPLICATION_KEY_PRIVATE=" >> $crendentials_private
-  echo "export OVH_APPLICATION_SECRET_PRIVATE=" >> $crendentials_private
-  echo "export OVH_CONSUMER_KEY_PRIVATE=" >> $crendentials_private
-  echo "export OVH_REGION=" >> $crendentials_private
+  echo "export OVH_APPLICATION_KEY_PRIVATE=\"<Your Application Private Key>\"" >> $crendentials_private
+  echo "export OVH_APPLICATION_SECRET_PRIVATE=\"<Your Application Secret>\"" >> $crendentials_private
+  echo "export OVH_CONSUMER_KEY_PRIVATE=\"<Your Consummer Key>\"" >> $crendentials_private
+  echo "export OVH_REGION=\"<Your Deployment Region>\"" >> $crendentials_private
+  chmod +x $crendentials_private
   exit 1
 fi
 
