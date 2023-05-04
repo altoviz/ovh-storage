@@ -34,12 +34,14 @@ This bootstrap project allows you to copy your data to an OVH storage account as
 - Create your OVH infrastructure using [Terraform](https://terraform.io)
 - Supports
 
-  - Versioning
+  - Storage location
+  - Storage class
   - Logging
+  - Versioning
   - Locks
   - Retention
 
-- Copy your files to OVH using Rclone
+- Copy your files to OVH using [Rclone](https://rclone.org)
 - Docker container support
 
 ## Requirements

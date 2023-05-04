@@ -16,7 +16,7 @@ provider "openstack" {
 }
 
 provider "aws" {
-  region     = "gra"
+  region     = var.region
   access_key = ovh_cloud_project_user_s3_credential.admin_s3_cred.access_key_id
   secret_key = ovh_cloud_project_user_s3_credential.admin_s3_cred.secret_access_key
   #OVH implementation has no STS service
@@ -25,7 +25,22 @@ provider "aws" {
   # the gra region is unknown to AWS hence skipping is needed.
   skip_region_validation = true
   endpoints {
-    s3 = "https://s3.gra.io.cloud.ovh.net"
+    s3 = format("https://s3.%s.%s.cloud.ovh.net", var.region, var.bucket_class)
+  }
+}
+
+provider "aws" {
+  alias      = "aws_log"
+  region     = var.region
+  access_key = ovh_cloud_project_user_s3_credential.admin_s3_cred.access_key_id
+  secret_key = ovh_cloud_project_user_s3_credential.admin_s3_cred.secret_access_key
+  #OVH implementation has no STS service
+  skip_credentials_validation = true
+  skip_requesting_account_id  = true
+  # the gra region is unknown to AWS hence skipping is needed.
+  skip_region_validation = true
+  endpoints {
+    s3 = format("https://s3.%s.io.cloud.ovh.net", var.region)
   }
 }
 

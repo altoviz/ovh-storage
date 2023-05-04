@@ -4,6 +4,9 @@ variable "environment" {
   default     = "dev"
   description = "Environment TLA"
 }
+# Object storage support region
+# gra, sbg and bhs support both standard and performance class
+# Check https://help.ovhcloud.com/csm/en-au-public-cloud-storage-s3-location?id=kb_article_view&sysparm_article=KB0047380
 variable "region" {
   type        = string
   default     = "gra"
@@ -13,6 +16,13 @@ variable "project_description" {
   type        = string
   default     = "ovh-storage"
   description = "Cloud Project name"
+}
+# io for standard
+# perf for performance
+variable "bucket_class" {
+  type        = string
+  default     = "io"
+  description = "Storage bucket class"
 }
 variable "bucket_prefix" {
   type        = string
