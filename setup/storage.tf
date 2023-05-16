@@ -13,7 +13,6 @@ resource "aws_s3_bucket_object_lock_configuration" "bucket_lock_conf" {
       days = var.bucket_object_lock_retention_days
     }
   }
-
 }
 
 resource "aws_s3_bucket_versioning" "bucket_versioning" {
@@ -29,3 +28,12 @@ resource "aws_s3_bucket_logging" "bucket_logging" {
   target_bucket = aws_s3_bucket.log_bucket[0].id
   target_prefix = "log/"
 }
+
+resource "aws_s3_bucket_acl" "bucket_acl" {
+  //depends_on = [aws_s3_bucket_ownership_controls.bucket]
+  bucket = aws_s3_bucket.bucket.id
+  acl    = "private"
+  # acl    = "public-read"
+}
+
+// TODO encryption

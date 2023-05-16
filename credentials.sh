@@ -13,17 +13,17 @@ else
   echo "export OVH_APPLICATION_KEY_PRIVATE=\"<Your Application Private Key>\"" >> $crendentials_private
   echo "export OVH_APPLICATION_SECRET_PRIVATE=\"<Your Application Secret>\"" >> $crendentials_private
   echo "export OVH_CONSUMER_KEY_PRIVATE=\"<Your Consummer Key>\"" >> $crendentials_private
-  echo "export OVH_REGION=\"<Your Deployment Region>\"" >> $crendentials_private
-  echo "export OVH_ENDPOINT=\"<OVH endpoint>\"" >> $crendentials_private
+  echo "export OVH_REGION_PRIVATE=\"gra\"" >> $crendentials_private
+  echo "export OVH_ENDPOINT_PRIVATE=\"ovh-eu\"" >> $crendentials_private
   chmod +x $crendentials_private
   exit 1
 fi
 
 export OVH_APPLICATION_KEY=${OVH_APPLICATION_KEY_PRIVATE}
 export OVH_APPLICATION_SECRET=${OVH_APPLICATION_SECRET_PRIVATE}
-export OVH_CONSUMER_KEY=${OVH_CONSUMER_KEY}
-export OVH_REGION=${OVH_CONSUMER_KEY:="gra"}
-export OVH_ENDPOINT=${OVH_ENDPOINT:="ovh-eu"}
+export OVH_CONSUMER_KEY=${OVH_CONSUMER_KEY_PRIVATE}
+export OVH_REGION=${OVH_REGION_PRIVATE:="gra"}
+export OVH_ENDPOINT=${OVH_ENDPOINT_PRIVATE:="ovh-eu"}
 
 terraform_folder="./setup"
 export OVH_S3_ACCESS_KEY_ID=$(terraform -chdir=${terraform_folder} output -raw s3_access_key_id || true)

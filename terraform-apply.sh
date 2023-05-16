@@ -6,4 +6,4 @@ if [ -f ./credentials.sh ]; then
   . ./credentials.sh
 fi
 
-terraform -chdir=./setup apply "$@"
+terraform -chdir=./setup apply -auto-approve "$@"
