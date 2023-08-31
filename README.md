@@ -88,7 +88,7 @@ It's also a very siple way to start your Terraform project for [OVHcloud](https:
 
    You can use whatever AWS S3 compatible tool you want to interact with OVHcloud object storage as it supports the defacto standard.
 
-   We use Rclone to to sync our data, a [script file](process/usr_local_bin/syncdata.sh) to run it and a [Docker container](process/Dockerfile) to make it easy to run it everywhere.
+   We use Rclone to sync our data, a [script file](process/usr_local_bin/syncdata.sh) to run it and a [Docker container](process/Dockerfile) to make it easy to run it everywhere.
 
    These are the 3 simple steps to run it. First, we build the docker container, then we run it and finaly, we display the output logs of the running container.
 
